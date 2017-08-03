@@ -4,9 +4,9 @@ myip() {
 alias rmrf='rm -rf'
 alias retag='ctags -R --exclude=.git --exclude=log --exclude=tmp --exclude=.js'
 alias va='vagrant'
-alias l='ls -hla'
-alias la='ls -hal'
-alias u='cd .. && ls -lha'
+alias l='exa -lg'
+alias la='exa -lag'
+alias u='cd .. && exa -lag'
 alias s='ssh'
 alias edithosts='sudo vi /etc/hosts'
 alias reloadhosts='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
@@ -19,20 +19,20 @@ sshconfig() {
 cl()
 {
   builtin cd $1
-  ls -hla
+  exa -lag
 }
 
 c()
 {
   builtin cd $1
-  ls -hla
+  exa -lag
 }
 
 mc()
 {
   mkdir $1
   cd $1
-  ls -hla
+  exa -lag
 }
 
 tophistory()
