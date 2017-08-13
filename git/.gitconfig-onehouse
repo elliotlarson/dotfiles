@@ -3,6 +3,10 @@
 [mergetool]
 	keepBackup = false
 	prompt = false
+[push]
+	default = current
+[pull]
+	rebase = true
 [core]
 	excludesfile = ~/.gitignore_global
   editor = /usr/local/bin/vim
