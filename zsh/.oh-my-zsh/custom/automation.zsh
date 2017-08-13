@@ -4,7 +4,7 @@ myip() {
 alias rmrf='rm -rf'
 alias retag='ctags -R --exclude=.git --exclude=log --exclude=tmp --exclude=.js'
 alias va='vagrant'
-alias l='exa -lg'
+alias l='exa -lag'
 alias la='exa -lag'
 alias u='cd .. && exa -lag'
 alias s='ssh'
