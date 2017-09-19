@@ -2,7 +2,7 @@ RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 COLOR_RESET=$(tput sgr0)
-say() {
+sayit() {
   echo -e "${2:-$YELLOW}$1${COLOR_RESET}"
 }
 alias gnit='git init'
@@ -12,7 +12,7 @@ alias gach='git branch'
 alias gacha='git branch -a'
 gachd() {
   if [ -z "$1" ]; then
-    say 'Which branch do you want to delete?' $RED
+    sayitit 'Which branch do you want to delete?' $RED
     branches_select_list
     local branch=$(pick_branch)
   else
@@ -33,7 +33,13 @@ alias gl='git log'
 alias glop='git log -p'
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"'
 alias gush='git push'
-alias gushf='git push -f'
+gushf() {
+  if [ $(current_branch) = 'master' ]; then
+    sayit "You're trying to force push to master. No. Just, no." $RED
+    return 1
+  fi
+  git push -f origin $(current_branch)
+}
 alias gull='git pull'
 alias gech='git fetch'
 alias gone='git clone'
@@ -63,7 +69,7 @@ pick_branch() {
 }
 gout() {
   if [ -z "$1" ]; then
-    say 'Which branch do you want?'
+    sayit 'Which branch do you want?'
     branches_select_list
     local branch=$(pick_branch)
   else
@@ -124,7 +130,7 @@ stage_all_if_none_staged() {
 }
 gwip() {
   if [ $(current_branch) = 'master' ]; then
-    say "You're trying to wip master.  Wip a branch instead." $RED
+    sayit "You're trying to wip master.  Wip a branch instead." $RED
     return 1
   fi
   stage_all_if_none_staged
