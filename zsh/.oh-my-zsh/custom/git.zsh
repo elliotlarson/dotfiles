@@ -32,7 +32,9 @@ alias gs='git status'
 alias gl='git log'
 alias glop='git log -p'
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"'
-alias gush='git push'
+gush() {
+  git push origin $(current_branch)
+}
 gushf() {
   if [ $(current_branch) = 'master' ]; then
     sayit "You're trying to force push to master. No. Just, no." $RED
