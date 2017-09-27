@@ -24,10 +24,10 @@
       "body": [
         "# frozen_string_literal: true",
         "",
+        "require('rails_helper')",
+        "",
         "RSpec.describe($1) do",
-        "  def do_call",
-        "    described_class.call($2)",
-        "  end",
+        "  $2",
         "end",
         ""
       ],
@@ -40,11 +40,71 @@
       ],
       "description": "rspec let"
     },
+    "let-string": {
+      "prefix": "les",
+      "body": [
+        "let(:$1) { '$2' }"
+      ],
+      "description": "rspec let string"
+    },
+    "let-heredoc": {
+      "prefix": "leh",
+      "body": [
+        "let(:$1) do",
+        "  <<~HDOC",
+        "    $2",
+        "  HDOC",
+        "end"
+      ],
+      "description": "rspec let heredoc"
+    },
+    "let-tempfile": {
+      "prefix": "letemp",
+      "body": [
+        "let(:$1) do",
+        "  Tempfile.new($2).tap do |tf|",
+        "    tf.write($3)",
+        "    tf.rewind",
+        "  end",
+        "end"
+      ],
+      "description": "rspec let tempfile"
+    },
+    "let!": {
+      "prefix": "le!",
+      "body": [
+        "let(:$1) { $2 }"
+      ],
+      "description": "rspec let"
+    },
+    "let-create-factory!": {
+      "prefix": "lec!",
+      "body": [
+        "let!(:$1) { create(:$1$2) }"
+      ],
+      "description": "rspec let create factory"
+    },
+    "let-create-double!": {
+      "prefix": "led!",
+      "body": [
+        "let(:$1) { double(:$1) }"
+      ],
+      "description": "rspec let create factory"
+    },
     "context": {
       "prefix": "con",
       "body": [
-        "context(:$1) do",
+        "context('$1') do",
         "  $2",
+        "end"
+      ],
+      "description": "rspec context"
+    },
+    "def do_call": {
+      "prefix": "doca",
+      "body": [
+        "def do_call",
+        "  described_class.call($1)",
         "end"
       ],
       "description": "rspec context"
@@ -52,10 +112,66 @@
     "describe": {
       "prefix": "des",
       "body": [
-        "describe(:$1) do",
+        "describe('$1') do",
         "  $2",
         "end"
       ],
       "description": "rspec describe"
+    },
+    "method-object": {
+      "prefix": "mo",
+      "body": [
+        "class $1 < MethodObject",
+        "  attrs($2)",
+        "",
+        "  def call",
+        "    $3",
+        "  end",
+        "end"
+      ],
+      "description": "rspec describe"
+    },
+    "frozen-string-literal": {
+      "prefix": "fsl",
+      "body": [
+        "# frozen_string_literal: true",
+        ""
+      ],
+      "description": "frozen string literal comment"
+    },
+    "form-object": {
+      "prefix": "fo",
+      "body": [
+        "class $1FormObject",
+        "  include ActiveModel::Model",
+        "",
+        "  attr_accessor($2)",
+        "",
+        "  # validates :foo, presence: true",
+        "",
+        "  def valid?",
+        "    super & ${3:some_model}_valid?",
+        "  end",
+        "",
+        "  def save",
+        "    return false unless valid?",
+        "    $3.save!",
+        "    true",
+        "  end",
+        "",
+        "  def $3",
+        "    @$3 ||= SomeModel.new()",
+        "  end",
+        "",
+        "  private",
+        "",
+        "  def $3_valid?",
+        "    return true if $3.valid?",
+        "    $3.errors.messages.each { |k, ers| ers.each { |e| errors.add(k, e) } }",
+        "    false",
+        "  end",
+        "end"
+      ],
+      "description": "frozen string literal comment"
     }
   }
