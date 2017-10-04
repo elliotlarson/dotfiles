@@ -12,7 +12,7 @@ alias gach='git branch'
 alias gacha='git branch -a'
 gachd() {
   if [ -z "$1" ]; then
-    sayitit 'Which branch do you want to delete?' $RED
+    sayit 'Which branch do you want to delete?' $RED
     branches_select_list
     local branch=$(pick_branch)
   else
