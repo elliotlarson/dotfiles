@@ -38,14 +38,6 @@
   "material-icon-theme.showWelcomeMessage": false,
   "vim.leader": ",",
   "vim.statusBarColorControl": false,
-  "vim.statusBarColors" : {
-      "normal": "#0078cf",
-      "insert": "#d16900",
-      "visual": "#9d00d1f",
-      "visualline": "#9d00d1f",
-      "visualblock": "#9d00d1f",
-      "replace": "#000000"
-  },
   "vim.disableAnnoyingGcMessage": true,
   "editor.cursorStyle": "line",
   "material-icon-theme.showUpdateMessage": false,
@@ -70,5 +62,9 @@
     "*.jsx": "javascript"
   },
   "extensions.ignoreRecommendations": true,
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#017087",
+    "panel.border": "#918f8f1c"
+  }
 }
