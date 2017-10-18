@@ -8,6 +8,7 @@ sayit() {
 alias gnit='git init'
 alias g='git'
 alias gote='git remote'
+alias gune='git remote prune origin'
 alias gach='git branch'
 alias gacha='git branch -a'
 gachd() {
