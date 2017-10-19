@@ -64,7 +64,9 @@
   "extensions.ignoreRecommendations": true,
   "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#017087",
-    "panel.border": "#918f8f1c"
+    "statusBar.background": "#222",
+    "panel.border": "#918f8f1c",
+    "editorGroup.border": "#6e6e6e2d",
+    "scrollbarSlider.background": "#7271712d"
   }
 }
