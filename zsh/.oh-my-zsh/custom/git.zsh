@@ -100,7 +100,7 @@ gend() {
   git commit --amend --no-edit
 }
 alias gres='git reset'
-alias gresha='git reset --hard'
+alias gard='git reset head --hard'
 greshe() {
   if [ -z "$1" ]; then
     local num=1
