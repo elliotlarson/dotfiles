@@ -18,7 +18,7 @@
 	extendRegexp = true
 	lineNumber = true
 [push]
-	default = matching
+	default = current
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
