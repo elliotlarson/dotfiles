@@ -51,3 +51,4 @@ source $HOME/.zshrc.local
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
