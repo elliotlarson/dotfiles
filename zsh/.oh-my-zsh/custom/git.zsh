@@ -100,9 +100,8 @@ gend() {
   stage_all_if_none_staged
   git commit --amend --no-edit
 }
-alias gres='git reset'
 alias gard='git reset head --hard'
-greshe() {
+greh() {
   if [ -z "$1" ]; then
     local num=1
   else
@@ -110,7 +109,7 @@ greshe() {
   fi
   git reset head~$num
 }
-gsho() {
+gosh() {
   if [ -z "$1" ]; then
     local sha=$(git rev-parse HEAD)
   else
