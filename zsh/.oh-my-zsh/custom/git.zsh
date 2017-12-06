@@ -10,7 +10,8 @@ alias g='git'
 alias gote='git remote'
 alias gune='git remote prune origin'
 alias gach='git branch'
-alias gacha='git branch -a'
+alias game='git blame'
+alias gaca='git branch -a'
 gachd() {
   if [ -z "$1" ]; then
     sayit 'Which branch do you want to delete?' $RED
