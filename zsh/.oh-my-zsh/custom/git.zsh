@@ -37,7 +37,7 @@ alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) 
 gush() {
   git push origin $(current_branch)
 }
-gushu() {
+gusu() {
   git push -u origin $(current_branch)
 }
 gushf() {
