@@ -23,8 +23,9 @@ alias ras='bundle exec rails server'
 alias ram='bundle exec rails db:migrate'
 alias rad='bundle exec rails db:setup'
 alias rat='bundle exec rails db:test:prepare'
-alias raps='rake parallel:spec'
-alias rapp='rake parallel:prepare'
+alias rapac='rake parallel:create'
+alias rapas='rake parallel:spec'
+alias rapat='rake parallel:prepare'
 
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration
