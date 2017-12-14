@@ -26,6 +26,13 @@ alias rat='bundle exec rails db:test:prepare'
 alias rapac='rake parallel:create'
 alias rapas='rake parallel:spec'
 alias rapat='rake parallel:prepare'
+rar() {
+  if [ -z "$1" ]; then
+    bundle exec rails routes
+  else
+    bundle exec rails routes | grep $1
+  fi
+}
 
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration
