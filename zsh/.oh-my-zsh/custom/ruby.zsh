@@ -34,6 +34,8 @@ rar() {
   fi
 }
 
+alias rin='brew update && brew upgrade ruby-build; rbenv install'
+
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration
 }
