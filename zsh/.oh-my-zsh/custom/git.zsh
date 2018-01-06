@@ -1,17 +1,33 @@
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
+CYAN=$(tput setaf 6)
 COLOR_RESET=$(tput sgr0)
 sayit() {
   echo -e "${2:-$YELLOW}$1${COLOR_RESET}"
 }
-alias gnit='git init'
+sayCmd() {
+  sayit "\$ ${1}" $CYAN
+}
 alias g='git'
 alias gote='git remote'
-alias gune='git remote prune origin'
-alias gach='git branch'
-alias game='git blame'
-alias gaca='git branch -a'
+
+gune() {
+  sayCmd 'git remote prune origin'
+  git remote prune origin
+}
+gach() {
+  sayCmd "git branch"
+  git branch
+}
+game() {
+  sayCmd "git blame"
+  git blame
+}
+gaca() {
+  sayCmd 'git branch -a'
+  git branch -a
+}
 gachd() {
   if [ -z "$1" ]; then
     sayit 'Which branch do you want to delete?' $RED
@@ -20,6 +36,7 @@ gachd() {
   else
     local branch="$1"
   fi
+  sayCmd "git branch -D $branch"
   git branch -D $branch
 }
 gadd() {
@@ -28,12 +45,25 @@ gadd() {
   else
     stage="$1"
   fi
+  sayCmd "git add $stage"
   git add $stage
 }
-alias gs='git status'
-alias gl='git log'
-alias glop='git log -p'
-alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"'
+gs() {
+  sayCmd "git status"
+  git status
+}
+gl() {
+  sayCmd "git log"
+  git log
+}
+glop() {
+  sayCmd "git log -p"
+  git log -p
+}
+glog() {
+  sayCmd "git log --pretty=format:\"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)\""
+  git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"
+}
 gush() {
   git push origin $(current_branch)
 }
@@ -47,8 +77,14 @@ gushf() {
   fi
   git push -f origin $(current_branch)
 }
-alias gull='git pull'
-alias gech='git fetch'
+gull() {
+  sayCmd "git pull"
+  git pull
+}
+gech() {
+  sayCmd "git fetch"
+  git fetch
+}
 alias gone='git clone'
 gonc() {
   repo_url=$1
@@ -58,6 +94,7 @@ gonc() {
   else
     directory_name="$2"
   fi
+  sayCmd "git clone $repo_url $directory_name && cd $directory_name"
   git clone $repo_url $directory_name && cd $directory_name
 }
 alias current_branch="git rev-parse --abbrev-ref HEAD"
@@ -82,31 +119,47 @@ gout() {
   else
     local branch="$1"
   fi
+  sayCmd "git checkout $branch"
   git checkout $branch
 }
-alias goum='git checkout master'
-alias goub='git checkout -b'
-alias gc='gac'
-gac() {
+goum() {
+  sayCmd "git checkout master"
+  git checkout master
+}
+goub() {
+  sayCmd "git checkout -b"
+  git checkout -b
+}
+gc() {
   stage_all_if_none_staged
   if [ -z "$1" ]; then
     local message=''
   else
     local message="-m $1"
   fi
+  sayCmd "git commit $message"
   git commit $message
 }
 gend() {
   stage_all_if_none_staged
+  sayCmd "git commit --amend --no-edit"
   git commit --amend --no-edit
 }
-alias gard='git reset head --hard'
+gard() {
+  sayCmd "git reset --hard head"
+  git reset --hard head
+}
+garr() {
+  sayCmd "git reset --hard origin/$(current_branch)"
+  git reset --hard origin/$(current_branch)
+}
 greh() {
   if [ -z "$1" ]; then
     local num=1
   else
     local num="$1"
   fi
+  sayCmd "git reset head~$num"
   git reset head~$num
 }
 gosh() {
@@ -115,22 +168,31 @@ gosh() {
   else
     local sha="$1"
   fi
+  sayCmd "git show $sha"
   git show $sha
 }
 alias gase='git rebase'
-alias gasm='git rebase master'
+gasm() {
+  sayCmd "git rebase master"
+  git rebase master
+}
 gasi() {
   if [ -z "$1" ]; then
     local number='5'
   else
     local number="$1"
   fi
+  sayCmd "git rebase -i head~$number"
   git rebase -i head~$number
 }
-alias gasc='git rebase --continue'
+gasc() {
+  sayCmd "git rebase --continue"
+  git rebase --continue
+}
 stage_all_if_none_staged() {
   git status | grep -q 'Changes to be committed'
   if [[ $? -eq 1 ]] ; then
+    sayCmd "git add ."
     git add .
   fi
 }
@@ -145,15 +207,24 @@ gwip() {
   else
     local message="wip: $1"
   fi
+  sayCmd "git commit -m \"$message [ci skip]\""
   git commit -m "$message [ci skip]"
 }
-alias gash='git stash -u'
-alias gpop='git stash pop'
-alias giff='git diff'
+gash() {
+  sayCmd "git stash -u"
+  git stash -u
+}
+gpop() {
+  sayCmd "git stash pop"
+  git stash pop
+}
+giff() {
+  sayCmd "git diff"
+  git diff
+}
 alias gifs='dit diff --staged'
 alias gerg='git merge'
 alias gref='git reflog'
 alias gean='git clean -df'
 alias gonf='git config'
 alias gick='git cherry-pick'
-alias gipr='git pull-request'
