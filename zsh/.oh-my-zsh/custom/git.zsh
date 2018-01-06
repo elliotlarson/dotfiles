@@ -65,9 +65,11 @@ glog() {
   git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"
 }
 gush() {
+  sayCmd "git push origin $(current_branch)"
   git push origin $(current_branch)
 }
 gusu() {
+  sayCmd "git push -u origin $(current_branch)"
   git push -u origin $(current_branch)
 }
 gushf() {
@@ -75,6 +77,7 @@ gushf() {
     sayit "You're trying to force push to master. No. Just, no." $RED
     return 1
   fi
+  sayCmd "git push -f origin $(current_branch)"
   git push -f origin $(current_branch)
 }
 gull() {
