@@ -30,7 +30,7 @@ rar() {
   if [ -z "$1" ]; then
     bundle exec rails routes
   else
-    bundle exec rails routes | grep $1
+    bundle exec rails routes | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} $1
   fi
 }
 
