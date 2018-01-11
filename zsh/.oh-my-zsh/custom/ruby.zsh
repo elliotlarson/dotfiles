@@ -1,3 +1,15 @@
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+CYAN=$(tput setaf 6)
+COLOR_RESET=$(tput sgr0)
+sayit() {
+  echo -e "${2:-$YELLOW}$1${COLOR_RESET}"
+}
+sayCmd() {
+  sayit "\$ ${1}" $CYAN
+}
+
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -9,32 +21,48 @@ alias bo='bundle open'
 alias bs='bundle show'
 alias bake='bundle exec rake'
 spec() {
-  if [ -z "$1" ]; then
-    spec='spec' # run the spec directory
+  if [ -e "bin/rspec" ]; then
+    sayCmd "bin/rspec $@"
+    bin/rspec $@
   else
-    spec="$1"
+    sayCmd "bundle exec rspec $@"
+    bundle exec rspec $@
   fi
-  bundle exec rspec $spec
 }
-alias r='bundle exec rails'
-alias rac='bundle exec rails console'
-alias rag='bundle exec rails generate'
-alias ras='bundle exec rails server'
-alias ram='bundle exec rails db:migrate'
-alias rad='bundle exec rails db:setup'
-alias rat='bundle exec rails db:test:prepare'
-alias rapac='rake parallel:create'
-alias rapas='rake parallel:spec'
-alias rapat='rake parallel:prepare'
+rails_command() {
+  if [ -e "bin/rails" ]; then
+    sayCmd "bin/rails $@"
+    bin/rails $@
+  else
+    sayCmd "bundle exec rails $@"
+    bundle exec rails $@
+  fi
+}
+alias r='rails_command'
+alias rac='rails_command console'
+alias rag='rails_command generate'
+alias ras='rails_command server'
+alias ram='rails_command db:migrate'
+alias rad='rails_command db:setup'
+alias rat='rails_command db:test:prepare'
+
+alias rpc="rails_command parallel:create"
+alias rps='rails_command parallel:spec'
+alias rpp='rails_command parallel:prepare'
+
 rar() {
   if [ -z "$1" ]; then
-    bundle exec rails routes
+    rails_command routes
   else
-    bundle exec rails routes | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} $1
+    rails_command routes | grep --color=auto $1
   fi
 }
 
-alias rin='brew update && brew upgrade ruby-build; rbenv install'
+rin() {
+  sayCmd 'brew update && brew upgrade ruby-build; rbenv install'
+  brew update && brew upgrade ruby-build
+  rbenv install
+}
 
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration

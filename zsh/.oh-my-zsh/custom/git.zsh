@@ -9,6 +9,7 @@ sayit() {
 sayCmd() {
   sayit "\$ ${1}" $CYAN
 }
+
 alias g='git'
 alias gote='git remote'
 
