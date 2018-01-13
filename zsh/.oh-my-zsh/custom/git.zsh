@@ -18,12 +18,12 @@ gune() {
   git remote prune origin
 }
 gach() {
-  sayCmd "git branch"
-  git branch
+  sayCmd "git branch $@"
+  git branch $@
 }
 game() {
-  sayCmd "git blame"
-  git blame
+  sayCmd "git blame $@"
+  git blame $@
 }
 gaca() {
   sayCmd 'git branch -a'
@@ -54,12 +54,12 @@ gs() {
   git status
 }
 gl() {
-  sayCmd "git log"
-  git log
+  sayCmd "git log $@"
+  git log $@
 }
 glop() {
-  sayCmd "git log -p"
-  git log -p
+  sayCmd "git log -p $@"
+  git log -p $@
 }
 glog() {
   sayCmd "git log --pretty=format:\"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)\""
@@ -131,8 +131,8 @@ goum() {
   git checkout master
 }
 goub() {
-  sayCmd "git checkout -b"
-  git checkout -b
+  sayCmd "git checkout -b $@"
+  git checkout -b $@
 }
 gc() {
   stage_all_if_none_staged
@@ -222,9 +222,13 @@ gpop() {
   sayCmd "git stash pop"
   git stash pop
 }
+gply() {
+  sayCmd "git stash apply"
+  git stash apply
+}
 giff() {
-  sayCmd "git diff"
-  git diff
+  sayCmd "git diff $@"
+  git diff $@
 }
 alias gifs='dit diff --staged'
 alias gerg='git merge'
