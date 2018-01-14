@@ -11,8 +11,11 @@ sayCmd() {
 }
 
 alias g='git'
-alias gote='git remote'
 
+gote() {
+  sayCmd "git remote $@"
+  git remote $@
+}
 gune() {
   sayCmd 'git remote prune origin'
   git remote prune origin
@@ -78,7 +81,10 @@ gech() {
   sayCmd "git fetch"
   git fetch
 }
-alias gone='git clone'
+gone() {
+  sayCmd "git clone $@"
+  git clone $@
+}
 gonc() {
   repo_url=$1
   if [ -z "$2" ]; then
@@ -153,7 +159,10 @@ gosh() {
   sayCmd "git show $sha"
   git show $sha
 }
-alias gase='git rebase'
+gase() {
+  sayCmd "git rebase $@"
+  git rebase $@
+}
 gasm() {
   sayCmd "git rebase master"
   git rebase master
@@ -208,9 +217,28 @@ giff() {
   sayCmd "git diff $@"
   git diff $@
 }
-alias gifs='dit diff --staged'
-alias gerg='git merge'
-alias gref='git reflog'
-alias gean='git clean -df'
-alias gonf='git config'
-alias gick='git cherry-pick'
+gifs() {
+  sayCmd 'dit diff --staged'
+  git diff --staged
+}
+gerg() {
+  sayCmd "git merge $@"
+  git merge $@
+}
+gref() {
+  sayCmd 'git reflog'
+  git reflog
+}
+gean() {
+  sayCmd 'git clean -df'
+  git clean -df
+}
+gonf() {
+  sayCmd "git config $@"
+  git config $@
+}
+gick() {
+  sayCmd "git cherry-pick $@"
+  git cherry-pick $@
+}
+
