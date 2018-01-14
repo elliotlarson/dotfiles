@@ -29,17 +29,6 @@ gaca() {
   sayCmd 'git branch -a'
   git branch -a
 }
-gachd() {
-  if [ -z "$1" ]; then
-    sayit 'Which branch do you want to delete?' $RED
-    branches_select_list
-    local branch=$(pick_branch)
-  else
-    local branch="$1"
-  fi
-  sayCmd "git branch -D $branch"
-  git branch -D $branch
-}
 gadd() {
   if [ -z "$1" ]; then
     stage='.'
@@ -114,17 +103,6 @@ pick_branch() {
   local branches=($(local_branches))
   read branch_num
   echo ${branches[$branch_num]}
-}
-gout() {
-  if [ -z "$1" ]; then
-    sayit 'Which branch do you want?'
-    branches_select_list
-    local branch=$(pick_branch)
-  else
-    local branch="$1"
-  fi
-  sayCmd "git checkout $branch"
-  git checkout $branch
 }
 goum() {
   sayCmd "git checkout master"
