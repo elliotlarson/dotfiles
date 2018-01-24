@@ -1,5 +1,6 @@
 
 {
+  "files.insertFinalNewline": true,
   "window.zoomLevel": 1,
   "vim.useCtrlKeys": true,
   "editor.tabSize": 2,
@@ -89,7 +90,8 @@
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
-    "suppressUpdateNotice": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressUpdateNotice": true,
     "suppressWelcomeNotice": true
   },
   "explorer.confirmDragAndDrop": false
