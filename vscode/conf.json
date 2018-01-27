@@ -72,12 +72,14 @@
   "extensions.ignoreRecommendations": true,
   "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#252526",
-    "titleBar.activeBackground": "#252526",
+    "statusBar.background": "#21252b",
+    "titleBar.activeBackground": "#21252b",
     "statusBar.foreground": "#ccc",
     "panel.border": "#918f8f1c",
     "editorGroup.border": "#6e6e6e2d",
-    "scrollbarSlider.background": "#7271712d"
+    "scrollbarSlider.background": "#7271712d",
+    "editor.background": "#1a1d22",
+    "tab.activeBackground": "#1a1d22"
   },
   "workbench.panel.location": "bottom",
   "gitlens.blame.line.enabled": false,
@@ -94,5 +96,6 @@
     "suppressUpdateNotice": true,
     "suppressWelcomeNotice": true
   },
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "workbench.colorTheme": "One Dark Pro Vivid"
 }
