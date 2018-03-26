@@ -123,7 +123,7 @@ gc() {
   if [ -z "$1" ]; then
     local message=''
   else
-    local message="-m $1"
+    local message="-m$1"
   fi
   sayCmd "git commit $message"
   git commit $message
