@@ -9,14 +9,10 @@ yarn
 imagemagick
 rbenv
 rbenv-gemset
-pyenv
-pyenv-virtualenv
 postgres
-mysql
 redis
 fzf
 chromedriver
-phantomjs
 ansible
 ag
 tig

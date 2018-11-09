@@ -1,10 +1,8 @@
-dropbox
 iterm2
 visual-studio-code
 istat-menus
 virtualbox
 vagrant
-screenhero
 sketch
 dash
 slack

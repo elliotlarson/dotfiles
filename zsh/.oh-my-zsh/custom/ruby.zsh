@@ -11,8 +11,6 @@ sayCmd() {
 }
 
 eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 alias b='bundle'
 alias bu='bundle update'

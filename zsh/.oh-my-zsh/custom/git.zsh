@@ -12,6 +12,11 @@ sayCmd() {
 
 alias g='git'
 
+groh() {
+  sayCmd "git reset --hard origin/$(current_branch)"
+  git reset --hard origin/$(current_branch)
+}
+
 gote() {
   sayCmd "git remote $@"
   git remote $@
