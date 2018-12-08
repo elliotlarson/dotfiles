@@ -12,6 +12,8 @@ alias edithosts='sudo vi /etc/hosts'
 alias reloadhosts='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias npr='npm run -s'
 alias es="exec $SHELL"
+alias wadir='while; do clear; l; sleep 1; done'
+
 sshconfig() {
   $EDITOR ~/.ssh/config
 }
