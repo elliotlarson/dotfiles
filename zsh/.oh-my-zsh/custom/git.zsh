@@ -75,8 +75,8 @@ gushf() {
     sayit "You're trying to force push to master. No. Just, no." $RED
     return 1
   fi
-  sayCmd "git push -f origin $(current_branch)"
-  git push -f origin $(current_branch)
+  sayCmd "git push --force-with-lease origin $(current_branch)"
+  git push --force-with-lease origin $(current_branch)
 }
 gull() {
   sayCmd "git pull"
