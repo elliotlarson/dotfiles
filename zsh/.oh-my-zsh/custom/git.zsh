@@ -139,7 +139,7 @@ gend() {
   git commit --amend --no-edit
 }
 gard() {
-  sayCmd "git reset --hard head"
+  sayCmd "git reset --hard head && git clean -df"
   git reset --hard head
 }
 garr() {
