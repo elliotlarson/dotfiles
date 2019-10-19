@@ -28,10 +28,10 @@ if ! command_exists brew; then
   brew install git zsh tmux vim stow
 fi
 
-say "Getting onehouse dotfiles"
-git clone git@github.com:onehouse/dotfiles.git onehouse-dotfiles
+say "Getting dotfiles"
+git clone git@github.com:elliot/dotfiles.git dotfiles
 error_check "Problem downloading dotfiles"
-cd onehouse-dotfiles
+cd dotfiles
 
 say "Setting up dotfiles"
 stow vim zsh rubygems tmux git
@@ -45,4 +45,4 @@ tmux source ~/.tmux.conf
 
 say "Setting up utility scripts"
 mkdir -p ~/bin
-ln -s ~/onehouse-dotfiles/bin/* ~/bin/
+ln -s ~/dotfiles/bin/* ~/bin/

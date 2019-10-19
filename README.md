@@ -1,4 +1,4 @@
-# Onehouse Dotfiles
+# Dotfiles
 
 ## Setting up
 
@@ -13,8 +13,8 @@ $ brew install git zsh tmux vim stow
 Clone this repo into your home directory and then cd into it to issue the stow command:
 
 ```bash
-$ git clone git@github.com:onehouse/dotfiles.git onehouse-dotfiles
-$ cd onehouse-dotfiles
+$ git clone git@github.com:elliotlarson/dotfiles.git dotfiles
+$ cd dotfiles
 $ stow vim zsh rubygems tmux git
 ```
 
@@ -36,7 +36,7 @@ Setup utility script symlinks:
 
 ```bash
 $ mkdir -p ~/bin
-$ ln -s ~/onehouse-dotfiles/bin/* ~/bin/
+$ ln -s ~/dotfiles/bin/* ~/bin/
 ```
 
 Add your `.zshrc.local` file to your home directory.  This is for customization specific to you.  You can either create an empty file or symlink from an existing location:
