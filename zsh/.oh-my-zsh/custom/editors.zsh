@@ -1,8 +1,8 @@
-export EDITOR=vim
-export BUNDLER_EDITOR=vim
+export EDITOR=nvim
+export BUNDLER_EDITOR=nvim
 
-alias vi='vim'
-alias v='vim'
+alias vi='nvim'
+alias v='nvim'
 co() {
   if [ -z "$1" ]; then
     code .
