@@ -56,3 +56,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+# eval "$(starship init zsh)"
