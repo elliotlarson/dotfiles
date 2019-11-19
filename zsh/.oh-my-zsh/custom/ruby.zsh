@@ -41,8 +41,11 @@ alias rac='rails_command console'
 alias rag='rails_command generate'
 alias ras='rails_command server'
 alias ram='rails_command db:migrate'
-alias rad='rails_command db:setup'
-alias rat='rails_command db:test:prepare'
+alias rads='rails_command db:seed'
+alias radd='rails_command db:drop'
+alias radc='rails_command db:create'
+alias radt='rails_command db:test:prepare'
+alias radr='rails_command db:rollback'
 
 alias rpc="rails_command parallel:create"
 alias rps='rails_command parallel:spec'
