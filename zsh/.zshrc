@@ -1,4 +1,21 @@
+export TERM="xterm-256color"
+
 DISABLE_AUTO_UPDATE="true"
+
+if [[ -z "${USING_RUBYMINE_TERMINAL}" ]]; then
+  source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+
+  POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+  POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+  POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+  POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="❯ "
+  # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="◉ "
+  # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+else
+  ZSH_THEME="elliot"
+fi
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -7,7 +24,6 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="elliot"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -58,3 +74,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ -f /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
 
 # eval "$(starship init zsh)"
+
+
