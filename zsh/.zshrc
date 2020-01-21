@@ -58,7 +58,7 @@ ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins+=(docker)
+#plugins+=(docker)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc.local
@@ -66,15 +66,3 @@ source $HOME/.zshrc.local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/elliot/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
-
-# eval "$(starship init zsh)"
-
-
-
-source /Users/elliot/Library/Preferences/org.dystroy.broot/launcher/bash/br

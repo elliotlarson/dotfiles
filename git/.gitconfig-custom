@@ -8,7 +8,7 @@
 [pull]
 	rebase = true
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore-global
   editor = /usr/local/bin/vim
 [branch "master"]
 	rebase = true
