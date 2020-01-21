@@ -29,25 +29,14 @@ Plug 'jgdavey/vim-blockle'
 Plug 'ngmy/vim-rubocop'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
-Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
-Plug 'kchmck/vim-coffee-script'
-Plug 'AndrewRadev/vim-eco'
-"Plug 'nono/vim-handlebars'
-"Plug 'ecomba/vim-ruby-refactoring'
-"Plug 'SirVer/ultisnips'
-"Plug 'elixir-lang/vim-elixir'
-Plug 'lambdatoast/elm.vim'
-"Plug 'chriskempson/base16-vim'
-"Plug 'josharian/impl'
-Plug 'posva/vim-vue'
 Plug 'digitaltoad/vim-pug'
+Plug 'morhetz/gruvbox'
 
 " Add plugins to &runtimepath
 call plug#end()

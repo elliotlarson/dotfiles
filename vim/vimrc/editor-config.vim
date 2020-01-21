@@ -1,7 +1,7 @@
+set guifont=Monaco:h13
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,space:·
-set list
-"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set listchars=tab:▸\ ,eol:¬,space:·
+" set list
 
 " Set the tag file search order
 set tags=./tags;
@@ -30,6 +30,9 @@ set autoindent
 "set completeopt-=preview
 filetype plugin indent on
 autocmd FileType ruby,haml,eruby,yaml set ai sw=2 sts=2 et
+
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
 set noerrorbells visualbell t_vb=
 

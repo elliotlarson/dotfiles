@@ -76,3 +76,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # eval "$(starship init zsh)"
 
 
+
+source /Users/elliot/Library/Preferences/org.dystroy.broot/launcher/bash/br

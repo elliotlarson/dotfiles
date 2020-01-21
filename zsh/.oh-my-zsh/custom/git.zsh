@@ -140,7 +140,7 @@ gend() {
 }
 gard() {
   sayCmd "git reset --hard head && git clean -df"
-  git reset --hard head
+  git reset --hard head && git clean -df
 }
 garr() {
   sayCmd "git reset --hard origin/$(current_branch)"

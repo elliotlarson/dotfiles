@@ -68,3 +68,10 @@ rin() {
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration
 }
+
+killruby () {
+  ps aux | grep ruby | awk '{print $2}' | xargs kill
+  ps aux | grep puma | awk '{print $2}' | xargs kill
+  ps aux | grep spring | awk '{print $2}' | xargs kill
+  ps aux | grep sidekiq | awk '{print $2}' | xargs kill
+}
