@@ -8,7 +8,7 @@ set tags=./tags;
 set laststatus=2
 set shell=bash
 set nocompatible      " Use vim, no vi defaults
-set relativenumber
+set number
 set ruler             " Show line and column number
 set encoding=utf-8    " Set default encoding to UTF-8
 set nowrap                        " don't wrap lines
