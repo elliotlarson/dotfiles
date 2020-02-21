@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/elliotlarson/vim-colors-elliotlarson'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
