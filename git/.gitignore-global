@@ -3,4 +3,5 @@
 *.swp
 *.iml
 spike.rb
+.idea
 

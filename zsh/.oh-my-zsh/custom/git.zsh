@@ -142,10 +142,6 @@ gard() {
   sayCmd "git reset --hard head && git clean -df"
   git reset --hard head && git clean -df
 }
-garr() {
-  sayCmd "git reset --hard origin/$(current_branch)"
-  git reset --hard origin/$(current_branch)
-}
 greh() {
   if [ -z "$1" ]; then
     local num=1
@@ -163,14 +159,6 @@ gosh() {
   fi
   sayCmd "git show $sha"
   git show $sha
-}
-gase() {
-  sayCmd "git rebase $@"
-  git rebase $@
-}
-gasm() {
-  sayCmd "git rebase master"
-  git rebase master
 }
 gasi() {
   if [ -z "$1" ]; then
@@ -225,10 +213,6 @@ giff() {
 gifs() {
   sayCmd 'dit diff --staged'
   git diff --staged
-}
-gerg() {
-  sayCmd "git merge $@"
-  git merge $@
 }
 gref() {
   sayCmd 'git reflog'
