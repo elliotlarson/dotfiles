@@ -142,6 +142,10 @@ gard() {
   sayCmd "git reset --hard head && git clean -df"
   git reset --hard head && git clean -df
 }
+gset() {
+  sayCmd "git reset"
+  git reset
+}
 greh() {
   if [ -z "$1" ]; then
     local num=1
