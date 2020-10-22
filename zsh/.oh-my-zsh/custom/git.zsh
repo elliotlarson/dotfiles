@@ -62,6 +62,10 @@ glog() {
   sayCmd "git log --pretty=format:\"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)\""
   git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"
 }
+gloo() {
+  sayCmd "git log --pretty=oneline"
+  git log --pretty=oneline
+}
 gush() {
   sayCmd "git push origin $(current_branch)"
   git push origin $(current_branch)
