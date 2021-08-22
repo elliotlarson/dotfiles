@@ -17,6 +17,7 @@ alias bu='bundle update'
 alias be='bundle exec'
 alias bo='bundle open'
 alias bs='bundle show'
+alias bop='bin/spring stop'
 alias bake='bundle exec rake'
 spec() {
   if [ -e "bin/rspec" ]; then

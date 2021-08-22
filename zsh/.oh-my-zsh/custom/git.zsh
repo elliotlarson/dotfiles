@@ -66,6 +66,14 @@ gloo() {
   sayCmd "git log --pretty=oneline"
   git log --pretty=oneline
 }
+gloc() {
+  sayCmd "git push $1..$(current_branch)"
+  git log $1..$(current_branch)
+}
+glof() {
+  sayCmd "git diff --name-status $1..$(current_branch)"
+  git diff --name-status $1..$(current_branch)
+}
 gush() {
   sayCmd "git push origin $(current_branch)"
   git push origin $(current_branch)
