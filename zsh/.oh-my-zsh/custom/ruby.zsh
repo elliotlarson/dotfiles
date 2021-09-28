@@ -10,7 +10,7 @@ sayCmd() {
   sayit "\$ ${1}" $CYAN
 }
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 alias b='bundle'
 alias bu='bundle update'
@@ -40,7 +40,7 @@ rails_command() {
 alias r='rails_command'
 alias rac='rails_command console'
 alias rag='rails_command generate'
-alias ras='rails_command server'
+alias ras='rails_command server -b 0.0.0.0'
 alias ram='rails_command db:migrate'
 alias rads='rails_command db:seed'
 alias radd='rails_command db:drop'
@@ -60,11 +60,11 @@ rar() {
   fi
 }
 
-rin() {
-  sayCmd 'brew update && brew upgrade ruby-build; rbenv install'
-  brew update && brew upgrade ruby-build
-  rbenv install
-}
+# rin() {
+#   sayCmd 'brew update && brew upgrade ruby-build; rbenv install'
+#   brew update && brew upgrade ruby-build
+#   rbenv install
+# }
 
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration

@@ -18,26 +18,22 @@ sshconfig() {
   $EDITOR ~/.ssh/config
 }
 
-cl()
-{
+cl() {
   builtin cd $1
   exa -lag
 }
 
-c()
-{
+c() {
   builtin cd $1
   exa -lag
 }
 
-mc()
-{
+mc() {
   mkdir $1
   cd $1
   exa -lag
 }
 
-tophistory()
-{
+tophistory() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
