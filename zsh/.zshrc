@@ -72,12 +72,17 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="/usr/local/opt/libiconv/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 
-. /usr/local/opt/asdf/asdf.sh
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
