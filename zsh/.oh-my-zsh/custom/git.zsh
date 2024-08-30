@@ -63,8 +63,15 @@ glog() {
   git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"
 }
 gloo() {
-  sayCmd "git log --pretty=oneline"
-  git log --pretty=oneline
+git log --pretty=format:"%h %s" --color=always | awk '
+  /Merge/ {
+    printf "\033[32m%02d. \033[34m%s \033[33m%s\033[0m\n", NR, $1, substr($0, index($0,$2))
+    next
+  }
+  {
+    printf "\033[32m%02d. \033[34m%s \033[97m%s\033[0m\n", NR, $1, substr($0, index($0,$2))
+  }' | less -r +Gg
+
 }
 gloc() {
   sayCmd "git push $1..$(current_branch)"
