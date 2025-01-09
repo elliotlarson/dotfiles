@@ -254,7 +254,7 @@ gick() {
   git cherry-pick $@
 }
 goby() {
-  sayCmd "git branch --show-current | pbcopy"
-  git branch --show-current | pbcopy
+  sayCmd "git branch --show-current | tr -d '\n' | pbcopy"
+  git branch --show-current | tr -d '\n' | pbcopy
 }
 
