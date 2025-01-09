@@ -21,9 +21,11 @@ DISABLE_AUTO_UPDATE="true"
 #   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 #   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 # else
-#   ZSH_THEME="elliot"
 # fi
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="amuse"
+ZSH_THEME="elliot"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -77,12 +79,9 @@ source $HOME/.zshrc.local
 export PATH="/usr/local/opt/libiconv/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+# bun completions
+[ -s "/Users/elliot/.bun/_bun" ] && source "/Users/elliot/.bun/_bun"
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
-
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
