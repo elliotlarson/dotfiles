@@ -28,6 +28,33 @@ spec() {
     bundle exec rspec $@
   fi
 }
+rubo() {
+  if [ -e "bin/rubocop" ]; then
+    sayCmd "bin/rubocop -A $@"
+    bin/rubocop -A $@
+  else
+    sayCmd "bundle exec rubocop -A $@"
+    bundle exec rubocop -A $@
+  fi
+}
+spep() {
+  if [ -e "bin/rake" ]; then
+    sayCmd "RAILS_ENV=test bin/rake parallel:spec"
+    RAILS_ENV=test bin/rake parallel:spec
+  else
+    sayCmd "bundle exec rake parallel:spec"
+    bundle exec rake parallel:spec
+  fi
+}
+spepp() {
+  if [ -e "bin/rake" ]; then
+    sayCmd "RAILS_ENV=test bin/rake parallel:prepare"
+    RAILS_ENV=test bin/rake parallel:prepare
+  else
+    sayCmd "bundle exec rake parallel:prepare"
+    bundle exec rake parallel:prepare
+  fi
+}
 rails_command() {
   if [ -e "bin/rails" ]; then
     sayCmd "bin/rails $@"
