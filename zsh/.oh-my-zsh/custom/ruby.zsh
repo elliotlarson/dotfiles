@@ -28,7 +28,7 @@ spec() {
     bundle exec rspec $@
   fi
 }
-rubo() {
+ruba() {
   if [ -e "bin/rubocop" ]; then
     sayCmd "bin/rubocop -A $@"
     bin/rubocop -A $@
