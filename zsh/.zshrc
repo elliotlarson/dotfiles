@@ -78,11 +78,3 @@ source $HOME/.zshrc.local
 
 export PATH="/usr/local/opt/libiconv/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
-
-# bun completions
-[ -s "/Users/elliot/.bun/_bun" ] && source "/Users/elliot/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-. "/Users/elliot/.deno/env"

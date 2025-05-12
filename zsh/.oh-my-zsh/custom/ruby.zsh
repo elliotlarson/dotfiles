@@ -75,9 +75,8 @@ alias radc='rails_command db:create'
 alias radt='rails_command db:test:prepare'
 alias radr='rails_command db:rollback'
 
-alias rpc="rails_command parallel:create"
-alias rps='rails_command parallel:spec'
-alias rpp='rails_command parallel:prepare'
+alias para="RAILS_ENV=test bin/rake parallel:spec"
+alias parap="RAILS_ENV=test bin/rake parallel:prepare"
 
 rar() {
   if [ -z "$1" ]; then

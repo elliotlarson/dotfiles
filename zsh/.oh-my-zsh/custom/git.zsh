@@ -245,6 +245,10 @@ gean() {
   sayCmd 'git clean -df'
   git clean -df
 }
+gead() {
+  sayCmd "git checkout head -- $@"
+  git checkout head -- $@
+}
 gonf() {
   sayCmd "git config $@"
   git config $@
@@ -257,4 +261,3 @@ goby() {
   sayCmd "git branch --show-current | tr -d '\n' | pbcopy"
   git branch --show-current | tr -d '\n' | pbcopy
 }
-
